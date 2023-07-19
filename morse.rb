@@ -1,31 +1,31 @@
 class MorseCodeDecoder
   MORSE_CODE = {
-    '.-'    => 'A',
-    '-...'  => 'B',
-    '-.-.'  => 'C',
-    '-..'   => 'D',
-    '.'     => 'E',
-    '..-.'  => 'F',
-    '--.'   => 'G',
-    '....'  => 'H',
-    '..'    => 'I',
-    '.---'  => 'J',
-    '-.-'   => 'K',
-    '.-..'  => 'L',
-    '--'    => 'M',
-    '-.'    => 'N',
-    '---'   => 'O',
-    '.--.'  => 'P',
-    '--.-'  => 'Q',
-    '.-.'   => 'R',
-    '...'   => 'S',
-    '-'     => 'T',
-    '..-'   => 'U',
-    '...-'  => 'V',
-    '.--'   => 'W',
-    '-..-'  => 'X',
-    '-.--'  => 'Y',
-    '--..'  => 'Z'
+    '.-' => 'A',
+    '-...' => 'B',
+    '-.-.' => 'C',
+    '-..' => 'D',
+    '.' => 'E',
+    '..-.' => 'F',
+    '--.' => 'G',
+    '....' => 'H',
+    '..' => 'I',
+    '.---' => 'J',
+    '-.-' => 'K',
+    '.-..' => 'L',
+    '--' => 'M',
+    '-.' => 'N',
+    '---' => 'O',
+    '.--.' => 'P',
+    '--.-' => 'Q',
+    '.-.' => 'R',
+    '...' => 'S',
+    '-' => 'T',
+    '..-' => 'U',
+    '...-' => 'V',
+    '.--' => 'W',
+    '-..-' => 'X',
+    '-.--' => 'Y',
+    '--..' => 'Z'
   }.freeze
 
   def self.decode_char(morse_code)
@@ -33,7 +33,7 @@ class MorseCodeDecoder
   end
 
   def self.decode_word(morse_word)
-    morse_word.split(' ').map { |char| decode_char(char) }.join
+    morse_word.split.map { |char| decode_char(char) }.join
   end
 
   def self.decode(message)
@@ -42,6 +42,6 @@ class MorseCodeDecoder
 end
 
 # Example usage
-message = ".-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ..."
+message = '.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...'
 decoded_message = MorseCodeDecoder.decode(message)
 puts decoded_message
